@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+	$(function() {
+		//init table
+		initTable();
+
+	})
+</script>
+<title></title>
+</head>
+<body>
+	<div class="row">
+		<h5>
+			<label>信息中心共有安全设备: 120&nbsp;&nbsp; 使用中: 100</label>
+		</h5>
+	</div>
+	<div class="row" id="toolbar" style="padding-left: 1rem">
+		<button id="add-baseinfo" class="col-2 btn btn-success add">新增</button>
+		<div class="divider"></div>
+		<button class="col-2 btn btn-danger">删除</button>
+		<div class="col-2"></div>
+		<input class="col form-control" type="search" placeholder="设备名称">
+		<div class="divider"></div>
+		<button class="col-2 btn btn-outline-success" type="button">查询</button>
+	</div>
+	<table id="bootstrap-table"></table>
+</body>
+</html>

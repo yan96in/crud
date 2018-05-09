@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script type="text/javascript">
+	$(function() {
+		//disable the bootstrap data atrribute API to avoid conflicts with vue.js.
+		$(document).off('.data-api');
+		//激活dropdown插件
+		$('.dropdown-toggle').dropdown();
+		//
+		$(".dropdown-item").addEvent('click', function(e) {
+			//e.preventDefault();
+			//将选中的项放入input中
+			$(this).parent().parent().siblings('input').val($(this).text())
+			$(this).dropdown('toggle');
+
+		})
+		//$('select').multiselect();
+		//
+		$('.datepicker').datepicker({
+			language : 'zh-CN',
+			format : "mm/yyyy",
+			minViewMode : 1
+		})
+
+		//
+		$(".next").addEvent('click', function(e) {
+			e.preventDefault();
+			var id = e.target.id;
+			loadPage("content", id)
+		})
+	});
+</script>
+<title>设备基础信息登记</title>
+</head>
+<body class="container-fluid">
+	<div class="row justify-content-center">
+		<h3>设备基础信息</h3>
+	</div>
+	<div class="row">
+		<form class="col">
+			<div class="row">
+				<div class="form-group col row justify-content-start">
+					<label class="col-4 col-form-label text-right" for="equipmentCode">设备编号</label>
+					<input class="col-2 form-control" id="equipmentCode" required>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							id="equipment-abbr" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"></button>
+						<div class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="equipment-abbr">
+							<h4 class="dropdown-header">设备简称</h4>
+							<div class="dropdown-divider"></div>
+							<button class="dropdown-item">网络设备</button>
+							<button class="dropdown-item">存储</button>
+							<button class="dropdown-item">服务器</button>
+						</div>
+					</div>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							id="sub-classify" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"></button>
+						<div class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="sub-classify">
+							<h4 class="dropdown-header">详细分类</h4>
+							<div class="dropdown-divider"></div>
+							<button class="dropdown-item">路由器</button>
+							<button class="dropdown-item">交换机</button>
+							<button class="dropdown-item">其他</button>
+						</div>
+					</div>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							id="sub-classify" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"></button>
+						<div class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="sub-classify">
+							<h4 class="dropdown-header">冗余状态</h4>
+							<div class="dropdown-divider"></div>
+							<button class="dropdown-item">单机</button>
+							<button class="dropdown-item">双机热备</button>
+							<button class="dropdown-item">负载均衡</button>
+							<button class="dropdown-item">Rac</button>
+						</div>
+					</div>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							id="sub-classify" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"></button>
+						<div class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="sub-classify">
+							<h4 class="dropdown-header">购买年份</h4>
+							<div class="dropdown-divider"></div>
+							<button class="dropdown-item">2001</button>
+							<button class="dropdown-item">2001</button>
+							<button class="dropdown-item">2001</button>
+						</div>
+					</div>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							id="sub-classify" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"></button>
+						<div class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="sub-classify">
+							<h4 class="dropdown-header">编号</h4>
+							<div class="dropdown-divider"></div>
+							<button class="dropdown-item">001</button>
+							<button class="dropdown-item">002</button>
+							<button class="dropdown-item">003</button>
+						</div>
+					</div>
+
+				</div>
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right">设备名称</label> <input
+						class="form-control col-7" type="text" required />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right">设备位置</label> <input
+						class="form-control col-5" type="text" required />
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							id="sub-classify" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"></button>
+						<div class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="sub-classify">
+							<h4 class="dropdown-header">数据机房</h4>
+							<div class="dropdown-divider"></div>
+							<button class="dropdown-item">01机房</button>
+							<button class="dropdown-item">02机房</button>
+							<button class="dropdown-item">03机房</button>
+						</div>
+					</div>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							id="sub-classify" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"></button>
+						<div class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="sub-classify">
+							<h4 class="dropdown-header">机柜</h4>
+							<div class="dropdown-divider"></div>
+							<button class="dropdown-item">01机房</button>
+							<button class="dropdown-item">02机房</button>
+							<button class="dropdown-item">03机房</button>
+						</div>
+					</div>
+				</div>
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right">设备品牌</label> <input
+						class="form-control col-7" type="text" required />
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right">设备型号</label> <input
+						class="form-control col-7" type="text" required />
+				</div>
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right">设备序列号</label> <input
+						class="form-control col-7" type="text" />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right" for="dept">使用处室</label>
+					<input class="form-control col-6 disable" id="dept" type="text"
+						required>
+					<div class="dropdown">
+						<button type="button" id="dLabel"
+							class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"></button>
+						<div class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="dLabel">
+							<button class="dropdown-item" type="button">全局业务处室</button>
+							<button class="dropdown-item" type="button">市级预算单位</button>
+							<button class="dropdown-item" type="button">县级预算单位</button>
+							<button class="dropdown-item" type="button">县级财政</button>
+						</div>
+					</div>
+				</div>
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right">承载业务系统</label> <input
+						class="col-6 form-control" required>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							id="dropdownMenuButton" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"></button>
+						<div class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="dropdownMenuButton"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right">购买时间</label> <input
+						class="form-control col-7 datepicker" required />
+				</div>
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right">项目名称</label> <input
+						class="col-6 form-control" required>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							id="dropdownMenuButton" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"></button>
+						<div class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="dropdownMenuButton"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right">供货公司</label> <input
+						class="col-6 form-control" required>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							id="dropdownMenuButton" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"></button>
+						<div class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="dropdownMenuButton"></div>
+					</div>
+				</div>
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right">质保期</label> <input
+						class="form-control col-7" type="text" required />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right">项目经理</label> <input
+						class="form-control col-7" type="text" required />
+				</div>
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right">联系方式</label> <input
+						class="form-control col-7" type="tel" required />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col row">
+					<label class="col-4 col-form-label text-right">技术参数</label>
+					<textarea class="form-control col-7" rows="3"></textarea>
+				</div>
+				<div class="form-group col row" style="height: 2.3rem">
+					<label class="col-4 col-form-label text-right">固定资产负责人</label> <input
+						class="form-control col-7" type="text" required />
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="row justify-content-center" style="margin-top: 0.5em">
+		<button class="btn btn-primary next" id="add-network-config"
+			type="button">下一步</button>
+	</div>
+</body>
+</html>

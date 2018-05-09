@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script type="text/javascript">
+	$(function() {
+		//
+		$("#bootstrap-table-maintenance")
+				.bootstrapTable(
+						{
+							// url : '/Home/GetDepartment', //请求后台的URL（*）
+							method : 'get', // 请求方式（*）
+							toolbar : '#toolbar', // 工具按钮用哪个容器
+							striped : true, // 是否显示行间隔色
+							cache : false, // 是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+							pagination : true, // 是否显示分页（*）
+							sortable : false, // 是否启用排序
+							sortOrder : "asc", // 排序方式
+							// queryParams : oTableInit.queryParams,//传递参数（*）
+							sidePagination : "server", // 分页方式：client客户端分页，server服务端分页（*）
+							pageNumber : 1, // 初始化加载第一页，默认第一页
+							pageSize : 10, // 每页的记录行数（*）
+							pageList : [ 10, 25, 50, 100 ], // 可供选择的每页的行数（*）
+							search : false, // 是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
+							strictSearch : true,
+							showColumns : false, // 是否显示可显示哪些列
+							showRefresh : false, // 是否显示刷新按钮
+							minimumCountColumns : 2, // 最少允许的列数
+							clickToSelect : false, // 是否启用点击选中行
+							height : 500, // 行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+							uniqueId : "ID", // 每一行的唯一标识，一般为主键列
+							showToggle : false, // 是否显示详细视图和列表视图的切换按钮
+							cardView : false, // 是否显示详细视图
+							detailView : false, // 是否显示父子表
+							data : [ {
+								id : 1,
+								name : 'Item 1',
+								price : '$1'
+							}, {
+								id : 2,
+								name : 'Item 2',
+								price : '$2'
+							}, {
+								id : 2,
+								name : 'Item 2',
+								price : '$2'
+							}, {
+								id : 2,
+								name : 'Item 2',
+								price : '$2'
+							}, {
+								id : 2,
+								name : 'Item 2',
+								price : '$2'
+							}, {
+								id : 2,
+								name : 'Item 2',
+								price : '$2'
+							} ],
+							columns : [
+									{
+										checkbox : false
+									},
+									{
+										field : 'Name',
+										title : '维护人'
+									},
+									{
+										field : 'ParentName',
+										title : '维护时间'
+									},
+									{
+										field : 'Level',
+										title : '维护内容'
+									},
+									{
+										field : 'Desc',
+										title : '操作',
+										width : '65px',
+										formatter : function(value, row, index) {
+											var html = [];
+											html
+													.push("<button type='button' id='detail' class='btn btn-info'>查看</button>");
+
+											return html.join("");
+											// return '好';
+										}
+									}, ],
+							responseHandler : function(res) {
+								$(".btn-info").addEvent('click', function(e) {
+									e.preventDefault();
+									var id = e.target.id;
+									loadPage("content", id)
+								})
+							}
+						})
+		//
+		$("#bootstrap-table-repair")
+				.bootstrapTable(
+						{
+							// url : '/Home/GetDepartment', //请求后台的URL（*）
+							method : 'get', // 请求方式（*）
+							toolbar : '#toolbar', // 工具按钮用哪个容器
+							striped : true, // 是否显示行间隔色
+							cache : false, // 是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+							pagination : true, // 是否显示分页（*）
+							sortable : false, // 是否启用排序
+							sortOrder : "asc", // 排序方式
+							// queryParams : oTableInit.queryParams,//传递参数（*）
+							sidePagination : "server", // 分页方式：client客户端分页，server服务端分页（*）
+							pageNumber : 1, // 初始化加载第一页，默认第一页
+							pageSize : 10, // 每页的记录行数（*）
+							pageList : [ 10, 25, 50, 100 ], // 可供选择的每页的行数（*）
+							search : false, // 是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
+							strictSearch : true,
+							showColumns : false, // 是否显示可显示哪些列
+							showRefresh : false, // 是否显示刷新按钮
+							minimumCountColumns : 2, // 最少允许的列数
+							clickToSelect : false, // 是否启用点击选中行
+							height : 500, // 行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+							uniqueId : "ID", // 每一行的唯一标识，一般为主键列
+							showToggle : false, // 是否显示详细视图和列表视图的切换按钮
+							cardView : false, // 是否显示详细视图
+							detailView : false, // 是否显示父子表
+							data : [ {
+								id : 1,
+								name : 'Item 1',
+								price : '$1'
+							}, {
+								id : 2,
+								name : 'Item 2',
+								price : '$2'
+							}, {
+								id : 2,
+								name : 'Item 2',
+								price : '$2'
+							}, {
+								id : 2,
+								name : 'Item 2',
+								price : '$2'
+							}, {
+								id : 2,
+								name : 'Item 2',
+								price : '$2'
+							}, {
+								id : 2,
+								name : 'Item 2',
+								price : '$2'
+							} ],
+							columns : [
+									{
+										checkbox : false
+									},
+									{
+										field : 'Name',
+										title : '维修人'
+									},
+									{
+										field : 'ParentName',
+										title : '维修时间'
+									},
+									{
+										field : 'Level',
+										title : '维修内容'
+									},
+									{
+										field : 'Desc',
+										title : '详情',
+										width : '65px',
+										formatter : function(value, row, index) {
+											var html = [];
+											html
+													.push("<button type='button' id='detail' class='btn btn-info'>查看</button>");
+
+											return html.join("");
+											// return '好';
+										}
+									}, ],
+							responseHandler : function(res) {
+								$(".btn-info").addEvent('click', function(e) {
+									e.preventDefault();
+									var id = e.target.id;
+									loadPage("content", id)
+								})
+							}
+						})
+	})
+</script>
+<title>设备基础信息</title>
+</head>
+<body>
+	<table class="table table-bordered table-sm" style="margin-top: 1rem">
+		<thead>
+			<tr>
+			</tr>
+		</thead>
+		<tbody class="">
+			<tr>
+				<td class="font-weight-bold">品牌</td>
+				<td class="">xxx</td>
+				<td class=" font-weight-bold">型号</td>
+				<td class="">xxx</td>
+			</tr>
+			<tr>
+				<td class=" font-weight-bold">序列号</td>
+				<td>xxx</td>
+				<td class=" font-weight-bold">使用处室</td>
+				<td>xxx</td>
+			</tr>
+			<tr>
+				<td class=" font-weight-bold">承载业务系统</td>
+				<td>xxx</td>
+				<td class=" font-weight-bold">购买时间</td>
+				<td>xxx</td>
+			</tr>
+			<tr>
+				<td class=" font-weight-bold">项目名称</td>
+				<td>xxx</td>
+				<td class=" font-weight-bold">供货公司</td>
+				<td>xxx</td>
+			</tr>
+			<tr>
+				<td class=" font-weight-bold">质保期</td>
+				<td>xxx</td>
+				<td class=" font-weight-bold">项目经理</td>
+				<td>xxx</td>
+			</tr>
+			<tr>
+				<td class=" font-weight-bold">联系方式</td>
+				<td>xxx</td>
+				<td class=" font-weight-bold">固定资产负责人</td>
+				<td>xxx</td>
+			</tr>
+			<tr>
+				<td class=" font-weight-bold">技术参数</td>
+				<td>xxx</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="accordion" id="accordion">
+		<div class="card h-75">
+			<div class="card-header" id="headingTwo">
+				<h5 class="mb-0">
+					<button class="btn btn-link collapsed" type="button"
+						data-toggle="collapse" data-target="#collapseTwo"
+						aria-expanded="false" aria-controls="collapseTwo">维护记录</button>
+				</h5>
+			</div>
+			<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+				data-parent="#accordion">
+				<div class="card-body">
+					<table id="bootstrap-table-maintenance"></table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingThree">
+				<h5 class="mb-0">
+					<button class="btn btn-link collapsed" type="button"
+						data-toggle="collapse" data-target="#collapseThree"
+						aria-expanded="false" aria-controls="collapseThree">维修记录</button>
+				</h5>
+			</div>
+			<div id="collapseThree" class="collapse"
+				aria-labelledby="headingThree" data-parent="#accordion">
+				<div class="card-body">
+					<table id="bootstrap-table-repair"></table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

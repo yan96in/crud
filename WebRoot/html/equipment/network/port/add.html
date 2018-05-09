@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<script type="text/javascript">
+	$(".next").addEvent('click', function(e) {
+		e.preventDefault();
+		var id = e.target.id;
+		loadPage("content", id)
+	})
+</script>
+<title></title>
+</head>
+<body class="container-fluid">
+	<div class="row justify-content-center">
+		<h3>端口信息表</h3>
+	</div>
+	<div class="row">
+		<form class="col">
+			<div class="form-row">
+				<div class="form-group col row justify-content-start">
+					<label class="col-4 col-form-label text-right">设备编号</label> <input
+						class="form-control col-7" type="text" value="待选"
+						disabled="disabled" />
+				</div>
+				<div class="form-group col row justify-content-start">
+					<label class="col-4 col-form-label text-right">设备名称</label> <input
+						class="form-control col-7" type="text" value="待选"
+						disabled="disabled" />
+				</div>
+			</div>
+			<div>端口详细信息</div>
+			<div class="form-row">
+				<div class="form-group col row justify-content-start">
+					<label class="col-4 col-form-label text-right">名称</label> <input
+						class="form-control col-7" required>
+
+				</div>
+				<div class="form-group col row justify-content-start">
+					<label class="col-4 col-form-label text-right">状态</label> <input
+						class="form-control col-7" required="required">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col row justify-content-start">
+					<label class="col-4 col-form-label text-right">IP</label><input
+						class="form-control col-7" type="text"
+						pattern="^(?:(?:1[0-9][0-9]\.)|(?:2[0-4][0-9]\.)|(?:25[0-5]\.)|(?:[1-9][0-9]\.)|(?:[0-9]\.)){3}(?:(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5])|(?:[1-9][0-9])|(?:[0-9]))$"
+						>
+				</div>
+				<div class="form-group col row justify-content-start">
+					<label class="col-4 col-form-label text-right">所属vlan</label> <input
+						class="form-control col-7">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col row justify-content-start">
+					<label class="col-4 col-form-label text-right">线标</label> <input
+						class="form-control col-7">
+				</div>
+				<div class="col"></div>
+			</div>
+			<div class="row">
+				<div class="form-group col row justify-content-start">
+					<label>备注:</label>
+				</div>
+				<div class="col">
+					<textarea class="form-control" rows="3"></textarea>
+				</div>
+			</div>
+			<div class="row justify-content-center" style="margin-top: 0.5rem">
+				<button class="btn btn-primary next" id="add-network-port"
+					type="button">继续录入</button>
+				&nbsp;&nbsp;
+				<button class="btn btn-primary" id="network" type="submit">提交</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

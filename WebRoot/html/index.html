@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+<link rel="stylesheet"
+	href="css/bootstrap/plugins/bootstrap-datepicker.css">
+<link rel="stylesheet" href="css/fine-uploader/fine-uploader.css">
+<link rel="stylesheet"
+	href="css/fine-uploader/fine-uploader-gallery.min.css">
+<link rel="stylesheet"
+	href="css/bootstrap/plugins/bootstrap-multiselect.css">
+<link rel="stylesheet" href="css/bootstrap/plugins/bootstrap-table.css">
+<link href="css/common.css" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap/popper.js"></script>
+<script src="js/bootstrap/bootstrap.js"></script>
+<script src="js/bootstrap/plugins/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap/plugins/bootstrap-datepicker.zh-CN.min.js"
+	charset="UTF-8"></script>
+<script src="js/bootstrap/plugins/bootstrap-multiselect.js"></script>
+<script src="js/bootstrap/plugins/bootstrap-table.js"></script>
+<script src="js/fine-uploader.js"></script>
+<script src="js/vue/vue.js"></script>
+<script src="js/common.js"></script>
+<script>
+	$(function() {
+		//加载首页菜单
+		loadPage("nav", "nav2")
+		//加载首页内容
+		loadPage("content", "index")
+		//
+		setTimeout(function() {
+			$(".nav-link").addEvent('click', function(e) {
+				e.preventDefault();
+				loadPage("content", e.target.id)
+			})
+		}, 500)
+
+		setInterval(function() {
+			$(".btn-info").addEvent('click', function(e) {
+				e.preventDefault();
+				var id = e.target.id;
+				loadPage("content", id)
+			})
+		}, 1000);
+	})
+</script>
+<title>信息化固定资产</title>
+</head>
+<body class="container-fluid">
+	<header class="navbar navbar-light bg-secondary text-light fixed-top">
+		<h2>
+			<i>信息中心固定资产</i>
+		</h2>
+	</header>
+	<div class="row" style="padding-top: 4rem">
+		<!-- 左侧菜单树 -->
+		<div class="col-2" id="nav"></div>
+		<!-- 页签 -->
+		<div class="col-10" id="content"></div>
+	</div>
+
+</body>
+</html>

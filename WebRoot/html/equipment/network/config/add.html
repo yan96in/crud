@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script type="text/template" id="qq-template">
+        <div class="qq-uploader-selector qq-uploader" qq-drop-area-text="Drop files here">
+        <div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container">
+            <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar"></div>
+        </div>
+        <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+            <span class="qq-upload-drop-area-text-selector"></span>
+        </div>
+        <div class="qq-upload-button-selector qq-upload-button">
+            <div>选择文件</div>
+        </div>
+            <span class="qq-drop-processing-selector qq-drop-processing">
+                <span>Processing dropped files...</span>
+                <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+            </span>
+        <ul class="qq-upload-list-selector qq-upload-list" aria-live="polite" aria-relevant="additions removals">
+            <li>
+                <div class="qq-progress-bar-container-selector">
+                    <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-progress-bar-selector qq-progress-bar"></div>
+                </div>
+                <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                <span class="qq-upload-file-selector qq-upload-file"></span>
+                <span class="qq-edit-filename-icon-selector qq-edit-filename-icon" aria-label="Edit filename"></span>
+                <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                <span class="qq-upload-size-selector qq-upload-size"></span>
+                <button type="button" class="qq-btn qq-upload-cancel-selector qq-upload-cancel">取消</button>
+                <button type="button" class="qq-btn qq-upload-retry-selector qq-upload-retry">重试</button>
+                <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">删除</button>
+                <span role="status" class="qq-upload-status-text-selector qq-upload-status-text"></span>
+            </li>
+        </ul>
+
+        <dialog class="qq-alert-dialog-selector">
+            <div class="qq-dialog-message-selector"></div>
+            <div class="qq-dialog-buttons">
+                <button type="button" class="qq-cancel-button-selector">Close</button>
+            </div>
+        </dialog>
+
+        <dialog class="qq-confirm-dialog-selector">
+            <div class="qq-dialog-message-selector"></div>
+            <div class="qq-dialog-buttons">
+                <button type="button" class="qq-cancel-button-selector">No</button>
+                <button type="button" class="qq-ok-button-selector">Yes</button>
+            </div>
+        </dialog>
+
+        <dialog class="qq-prompt-dialog-selector">
+            <div class="qq-dialog-message-selector"></div>
+            <input type="text">
+            <div class="qq-dialog-buttons">
+                <button type="button" class="qq-cancel-button-selector">Cancel</button>
+                <button type="button" class="qq-ok-button-selector">Ok</button>
+            </div>
+        </dialog> 
+</script>
+<script type="text/javascript">
+	$(".next").addEvent('click', function(e) {
+		e.preventDefault();
+		var id = e.target.id;
+		loadPage("content", id)
+	})
+</script>
+<title>配置信息表</title>
+</head>
+<body class="container-fluid">
+	<div class="row justify-content-center">
+		<h3>配置信息表</h3>
+	</div>
+	<div class="row">
+		<div class="col">
+			<form class="">
+				<div class="form-group row">
+					<label class="col-2 col-form-label text-right">设备编号</label> <input
+						class="form-control col-9" type="text" value="待选"
+						disabled="disabled" required />
+				</div>
+				<div class="form-group row">
+					<label class="col-2 col-form-label text-right">设备名称</label> <input
+						class="form-control col-9" type="text" value="待选"
+						disabled="disabled" required />
+				</div>
+				<div class="form-group row">
+					<label class="col-2 col-form-label text-right">系统版本</label> <input
+						class="form-control col-9" required>
+				</div>
+				<div class="form-group row">
+					<label class="col-2 col-form-label text-right">管理IP</label> <input
+						class="form-control col-9" type="text"
+						pattern="^(?:(?:1[0-9][0-9]\.)|(?:2[0-4][0-9]\.)|(?:25[0-5]\.)|(?:[1-9][0-9]\.)|(?:[0-9]\.)){3}(?:(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5])|(?:[1-9][0-9])|(?:[0-9]))$"
+						required>
+				</div>
+				<div class="form-group row">
+					<label class="col-2 col-form-label text-right">硬件配置</label> <input
+						class="form-control col-9" required>
+				</div>
+				<div class="form-group row">
+					<label class="col-2 col-form-label text-right">详细配置</label>
+					<div id="uploader" ></div>
+				</div>
+			</form>
+			<div class="row justify-content-center" style="margin-top: 0.5em">
+				<button class="btn btn-primary next" id="add-network-port"
+					type="button">下一步</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		// Some options to pass to the uploader are discussed on the next page
+		var uploader = new qq.FineUploader({
+			element : document.getElementById("uploader"),
+			request : {
+				endpoint : '/gdzc/upload'
+			}
+		})
+	</script>
+</body>
+</html>

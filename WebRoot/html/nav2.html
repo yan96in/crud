@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+	<div class="accordion" id="nav" style="padding-top:1rem">
+		<div class="card">
+			<div class="card-header no-padding" id="heading-network">
+				<h5 class="mb-0">
+					<button class="btn btn-link nav-link collapsed" id="index"
+						type="button" data-toggle="collapse" aria-expanded="false">首页</button>
+				</h5>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header no-padding" id="heading-network">
+				<h5 class="mb-0">
+					<button class="btn btn-link nav-link collapsed" id="network"
+						type="button" data-toggle="collapse"
+						data-target="#collapse-network" aria-expanded="false"
+						aria-controls="collapse-network">网络设备</button>
+				</h5>
+			</div>
+			<div id="collapse-network" class="collapse"
+				aria-labelledby="heading-network" data-parent="#nav">
+				<div class="card-body no-padding">
+					<a class="nav-link ml-3 my-1 no-padding" id="router">路由器</a> <a
+						class="nav-link ml-3 my-1 no-padding" id="switch">交换机</a><a
+						class="nav-link ml-3 my-1 no-padding" id="fiber">光纤交换机</a><a
+						class="nav-link ml-3 my-1 no-padding" id="network-other">其他</a>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header no-padding" id="heading-storage">
+				<h5 class="mb-0">
+					<button class="btn btn-link nav-link collapsed" id="storage" type="button"
+						data-toggle="collapse" data-target="#collapse-storage"
+						aria-expanded="false" aria-controls="collapse-storage">存储</button>
+				</h5>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header no-padding" id="heading-server">
+				<h5 class="mb-0">
+					<button class="btn btn-link nav-link collapsed" id="server" type="button"
+						data-toggle="collapse" data-target="#collapse-server"
+						aria-expanded="false" aria-controls="collapse-server">
+						服务器</button>
+				</h5>
+			</div>
+			<div id="collapse-server" class="collapse"
+				aria-labelledby="heading-server" data-parent="#nav">
+				<div class="card-body no-padding">
+					<a class="nav-link ml-3 my-1 no-padding" id="database">数据库</a> <a
+						class="nav-link ml-3 my-1 no-padding" id="application">应用</a><a
+						class="nav-link ml-3 my-1 no-padding" id="vitual">虚拟化</a><a
+						class="nav-link ml-3 my-1 no-padding" id="server-other">其他</a>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header no-padding" id="heading-safe">
+				<h5 class="mb-0">
+					<button class="btn btn-link nav-link collapsed" id="safe" type="button"
+						data-toggle="collapse" data-target="#collapse-safe"
+						aria-expanded="false" aria-controls="collapse-safe">安全设备</button>
+				</h5>
+			</div>
+			<div id="collapse-safe" class="collapse"
+				aria-labelledby="heading-safe" data-parent="#nav">
+				<div class="card-body no-padding">
+					<a class="nav-link ml-3 my-1" id="firewall">防火墙</a> <a
+						class="nav-link ml-3 my-1" id="ca">CA设备</a><a
+						class="nav-link ml-3 my-1" id="safe-other">其他</a>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header no-padding" id="heading-video">
+				<h5 class="mb-0">
+					<button class="btn btn-link nav-link collapsed" id="video" type="button"
+						data-toggle="collapse" data-target="#collapse-video"
+						aria-expanded="false" aria-controls="collapse-video">视频会议</button>
+				</h5>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header no-padding" id="heading-base">
+				<h5 class="mb-0">
+					<button class="btn btn-link nav-link collapsed" id="base" type="button"
+						data-toggle="collapse" data-target="#collapse-base"
+						aria-expanded="false" aria-controls="collapse-base">基础设备</button>
+				</h5>
+			</div>
+			<div id="collapse-base" class="collapse"
+				aria-labelledby="heading-base" data-parent="#nav">
+				<div class="card-body no-padding">
+					<a class="nav-link ml-3 my-1" id="ups">UPS</a> <a
+						class="nav-link ml-3 my-1" id="fresh-air">新风</a><a
+						class="nav-link ml-3 my-1" id="refrigerat">制冷</a><a
+						class="nav-link ml-3 my-1" id="fire-fight">消防</a><a
+						class="nav-link ml-3 my-1" id="distribute">配电</a><a
+						class="nav-link ml-3 my-1" id="base-other">其他</a>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header no-padding" id="heading-codetable">
+				<h5 class="mb-0">
+					<button class="btn btn-link nav-link collapsed" type="button"
+						data-toggle="collapse" data-target="#collapse-codetable"
+						aria-expanded="false" aria-controls="collapse-codetable">码表维护</button>
+				</h5>
+			</div>
+			<div id="collapse-codetable" class="collapse"
+				aria-labelledby="heading-codetable" data-parent="#nav">
+				<div class="card-body no-padding"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		/* $(".nav-link").addEvent('click', function(e) {
+			e.preventDefault();
+			loadPage("content", e.target.id)
+		}) */
+	</script>
+</body>
+</html>

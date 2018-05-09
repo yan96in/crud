@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+	$(function() {
+		//init table
+		initTable();
+		$(".add").addEvent('click', function(e) {
+			e.preventDefault();
+			var id = e.target.id;
+			loadPage("content", id)
+		});
+
+	})
+</script>
+<title></title>
+</head>
+<body class="container">
+	<div class="row">
+		<h6>
+			<label>信息中心共有网络设备: 120&nbsp;&nbsp; 使用中: 100</label>
+		</h6>
+	</div>
+	<div class="row">
+		<h6>
+			<label>分类详情:</label>
+		</h6>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<table class="table table-striped table-condensed">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">路由器</th>
+						<th scope="col">交换机</th>
+						<th scope="col">光纤交换机</th>
+						<th scope="col">其他</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">总计</th>
+						<td>10</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<th scope="row">运行中</th>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<h5>设备列表:</h5>
+		</div>
+	</div>
+	<div class="row" id="toolbar" style="padding-left: 1rem">
+		<button id="add-baseinfo" class="col-2 btn btn-success add">新增</button>
+		<div class="divider"></div>
+		<button class="col-2 btn btn-danger">删除</button>
+		<div class="col-2"></div>
+		<input class="col form-control" type="search" placeholder="设备名称">
+		<div class="divider"></div>
+		<button class="col-2 btn btn-outline-success" type="button">查询</button>
+	</div>
+	<table id="bootstrap-table"></table>
+</body>
+</html>
