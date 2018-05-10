@@ -10,10 +10,7 @@
 	$(function() {
 		loadPage("myTabContent", "baseinfo-tab")
 		//
-		$(".nav-item .nav-link").addEvent('click', function(e) {
-			e.preventDefault();
-			loadPage("myTabContent", e.target.id)
-		})
+		initTabSwitch();
 	})
 </script>
 <title>设备基础信息</title>

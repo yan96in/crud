@@ -47,7 +47,15 @@ var addLoadPageToClickEvent = function(selector) {
 		loadPage("content", id)
 	})
 }
-
+// 切换页签tab
+var initTabSwitch = function() {
+	$(".nav-item .nav-link").addEvent('click', function(e) {
+		e.preventDefault();
+		$(".nav-item .nav-link").removeClass("active");
+		$(e.target).addClass("active");
+		loadPage("myTabContent", e.target.id)
+	})
+}
 // initTable
 var initTable = function() {
 
@@ -74,7 +82,6 @@ var initTable = function() {
 						showRefresh : false, // 是否显示刷新按钮
 						minimumCountColumns : 2, // 最少允许的列数
 						clickToSelect : false, // 是否启用点击选中行
-						height : 500, // 行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
 						uniqueId : "ID", // 每一行的唯一标识，一般为主键列
 						showToggle : false, // 是否显示详细视图和列表视图的切换按钮
 						cardView : false, // 是否显示详细视图

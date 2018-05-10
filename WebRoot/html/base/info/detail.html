@@ -10,6 +10,7 @@
 		$("#bootstrap-table-maintenance")
 				.bootstrapTable(
 						{
+							classes:'table table-sm table-striped',
 							// url : '/Home/GetDepartment', //请求后台的URL（*）
 							method : 'get', // 请求方式（*）
 							toolbar : '#toolbar', // 工具按钮用哪个容器
@@ -29,7 +30,6 @@
 							showRefresh : false, // 是否显示刷新按钮
 							minimumCountColumns : 2, // 最少允许的列数
 							clickToSelect : false, // 是否启用点击选中行
-							height : 500, // 行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
 							uniqueId : "ID", // 每一行的唯一标识，一般为主键列
 							showToggle : false, // 是否显示详细视图和列表视图的切换按钮
 							cardView : false, // 是否显示详细视图
@@ -82,7 +82,7 @@
 										formatter : function(value, row, index) {
 											var html = [];
 											html
-													.push("<button type='button' id='detail' class='btn btn-info'>查看</button>");
+													.push("<button type='button' id='detail' class='btn btn-sm btn-info'>查看</button>");
 
 											return html.join("");
 											// return '好';
@@ -101,6 +101,7 @@
 				.bootstrapTable(
 						{
 							// url : '/Home/GetDepartment', //请求后台的URL（*）
+							classes:'table table-sm table-striped',
 							method : 'get', // 请求方式（*）
 							toolbar : '#toolbar', // 工具按钮用哪个容器
 							striped : true, // 是否显示行间隔色
@@ -119,7 +120,6 @@
 							showRefresh : false, // 是否显示刷新按钮
 							minimumCountColumns : 2, // 最少允许的列数
 							clickToSelect : false, // 是否启用点击选中行
-							height : 500, // 行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
 							uniqueId : "ID", // 每一行的唯一标识，一般为主键列
 							showToggle : false, // 是否显示详细视图和列表视图的切换按钮
 							cardView : false, // 是否显示详细视图
@@ -154,25 +154,25 @@
 										checkbox : false
 									},
 									{
-										field : 'Name',
+										field : 'name',
 										title : '维修人'
 									},
 									{
-										field : 'ParentName',
+										field : 'parentName',
 										title : '维修时间'
 									},
 									{
-										field : 'Level',
+										field : 'level',
 										title : '维修内容'
 									},
 									{
-										field : 'Desc',
+										field : 'desc',
 										title : '详情',
 										width : '65px',
 										formatter : function(value, row, index) {
 											var html = [];
 											html
-													.push("<button type='button' id='detail' class='btn btn-info'>查看</button>");
+													.push("<button type='button' id='detail' class='btn btn-sm btn-info'>查看</button>");
 
 											return html.join("");
 											// return '好';
@@ -198,13 +198,13 @@
 		</thead>
 		<tbody class="">
 			<tr>
-				<td class="font-weight-bold">品牌</td>
+				<td class="font-weight-bold">品&emsp;&emsp;牌</td>
 				<td class="">xxx</td>
-				<td class=" font-weight-bold">型号</td>
+				<td class=" font-weight-bold">型&emsp;&emsp;号</td>
 				<td class="">xxx</td>
 			</tr>
 			<tr>
-				<td class=" font-weight-bold">序列号</td>
+				<td class=" font-weight-bold">序&ensp;列&ensp;号</td>
 				<td>xxx</td>
 				<td class=" font-weight-bold">使用处室</td>
 				<td>xxx</td>
@@ -222,7 +222,7 @@
 				<td>xxx</td>
 			</tr>
 			<tr>
-				<td class=" font-weight-bold">质保期</td>
+				<td class=" font-weight-bold">质&ensp;保&ensp;期</td>
 				<td>xxx</td>
 				<td class=" font-weight-bold">项目经理</td>
 				<td>xxx</td>

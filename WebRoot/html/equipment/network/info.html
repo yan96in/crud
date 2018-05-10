@@ -9,11 +9,8 @@
 <script>
 	$(function() {
 		loadPage("myTabContent", "baseinfo-tab")
-		//
-		$(".nav-item .nav-link").addEvent('click', function(e) {
-			e.preventDefault();
-			loadPage("myTabContent", e.target.id)
-		})
+		//初始化切换页签方法
+		initTabSwitch();
 	})
 </script>
 <title>设备基础信息</title>
@@ -23,23 +20,20 @@
 		<div class="dropdown-divider"></div>
 		<div class="row" style="margin-top: 1rem; margin-bottom: 1rem;">
 			<div class="col-2 font-weight-bold">设备编号</div>
-			<div class="col-4">xxxx</div>
+			<div class="col-4 bg-light">xxxx</div>
 			<div class="col-2 font-weight-bold">设备名称</div>
-			<div class="col-4">交换机</div>
+			<div class="col-4 bg-light">交换机</div>
 		</div>
 		<div class="dropdown-divider"></div>
 		<div class="row">
 			<div class="col-12">
 				<ul class="nav nav-tabs " id="mytab" role="tablist">
 					<li class="nav-item"><a class="nav-link active"
-						id="baseinfo-tab" data-toggle="tab" href="#home" role="tab"
-						aria-controls="baseinfo" aria-selected="true">基础信息</a></li>
-					<li class="nav-item"><a class="nav-link" href="#"
-						id="net-config-tab" data-toggle="tab" href="#home" role="tab"
-						aria-controls="config" aria-selected="true">配置信息</a></li>
-					<li class="nav-item"><a class="nav-link" href="#"
-						id="net-port-tab" data-toggle="tab" href="#home" role="tab"
-						aria-controls="port" aria-selected="true">端口信息</a></li>
+						id="baseinfo-tab">基础信息</a></li>
+					<li class="nav-item"><a class="nav-link"
+						id="network-config-tab">配置信息</a></li>
+					<li class="nav-item"><a class="nav-link"
+						id="network-port-tab">端口信息</a></li>
 				</ul>
 				<!-- 内容 -->
 				<div class="tab-content" id="myTabContent"></div>

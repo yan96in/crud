@@ -10,10 +10,7 @@
 	$(function() {
 		loadPage("myTabContent", "baseinfo-tab")
 		//
-		$(".nav-item .nav-link").addEvent('click', function(e) {
-			e.preventDefault();
-			loadPage("myTabContent", e.target.id)
-		})
+		initTabSwitch();
 	})
 </script>
 <title>设备基础信息</title>
@@ -22,9 +19,9 @@
 	<div class="container-fluid">
 		<div class="dropdown-divider"></div>
 		<div class="row" style="margin-top: 1rem; margin-bottom: 1rem;">
-			<div class="col-2 font-weight-bold">设备编号</div>
+			<div class="col-2 font-weight-bold bg-light">设备编号</div>
 			<div class="col-4">xxxx</div>
-			<div class="col-2 font-weight-bold">设备名称</div>
+			<div class="col-2 font-weight-bold bg-light">设备名称</div>
 			<div class="col-4">交换机</div>
 		</div>
 		<div class="dropdown-divider"></div>

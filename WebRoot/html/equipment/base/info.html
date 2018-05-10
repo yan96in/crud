@@ -10,10 +10,7 @@
 	$(function() {
 		loadPage("myTabContent", "baseinfo-tab")
 		//
-		$(".nav-item .nav-link").addEvent('click', function(e) {
-			e.preventDefault();
-			loadPage("myTabContent", e.target.id)
-		})
+		initialTabSwitch();
 	})
 </script>
 <title>设备基础信息</title>
@@ -35,7 +32,7 @@
 						id="baseinfo-tab" data-toggle="tab" role="tab"
 						aria-selected="true">基础信息</a></li>
 					<li class="base-other-tab"><a class="nav-link" id="safe-config-tab"
-						data-toggle="tab" role="tab" aria-selected="true">分类配置</a></li>
+						data-toggle="tab" role="tab" aria-selected="true">其他信息</a></li>
 				</ul>
 				<!-- 内容 -->
 				<div class="tab-content" id="myTabContent"></div>

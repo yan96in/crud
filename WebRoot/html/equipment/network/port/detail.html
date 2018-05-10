@@ -16,6 +16,7 @@
 	//初始化
 	$(function() {
 		$("#bootstrap-table").bootstrapTable({
+			classes:'table table-sm table-striped',
 			//url : '/Home/GetDepartment', //请求后台的URL（*）
 			method : 'get', //请求方式（*）
 			toolbar : '#toolbar', //工具按钮用哪个容器
@@ -35,42 +36,41 @@
 			showRefresh : false, //是否显示刷新按钮
 			minimumCountColumns : 2, //最少允许的列数
 			clickToSelect : false, //是否启用点击选中行
-			height : 500, //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
 			uniqueId : "ID", //每一行的唯一标识，一般为主键列
 			showToggle : false, //是否显示详细视图和列表视图的切换按钮
 			cardView : false, //是否显示详细视图
 			detailView : false, //是否显示父子表
 			data : [ {
 				id : 1,
-				name : 'Item 1',
+				name : '端口1',
 				price : '$1'
 			}, {
 				id : 2,
-				name : 'Item 2',
+				name : '端口2',
 				price : '$2'
 			} ],
 			columns : [ {
 				checkbox : false
 			}, {
-				field : 'Name',
+				field : 'name',
 				title : '名称'
 			}, {
-				field : 'ParentName',
+				field : 'parentName',
 				title : '状态'
 			}, {
-				field : 'Level',
+				field : 'level',
 				title : 'IP'
 			}, {
-				field : 'Desc',
+				field : 'desc',
 				title : '所属vlan'
 			}, {
-				field : 'Desc',
+				field : 'lineMark',
 				title : '线标'
 			}, {
-				field : 'Desc',
+				field : 'connectedE',
 				title : '连接设备',
 				width : "65px",
-				formatter : format(this.value, this.row, this.index)
+				//formatter : format(this.value, this.row, this.index)
 			} ]
 		})
 	})
@@ -78,10 +78,6 @@
 <title></title>
 </head>
 <body class="container-fluid">
-	<div class="row">
-		<div class="col">
-			<div id="bootstrap-table"></div>
-		</div>
-	</div>
+			<table id="bootstrap-table"></table>
 </body>
 </html>
