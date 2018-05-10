@@ -2,31 +2,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="stylesheet" href="../../../../css/bootstrap/bootstrap.css">
-<link rel="stylesheet"
-	href="../../../../css/bootstrap/plugins/bootstrap-datepicker.css">
-<link rel="stylesheet"
-	href="../../../../css/fine-uploader/fine-uploader.css">
-<link href="../../../../css/fine-uploader/fine-uploader-gallery.min.css"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="../../../../css/bootstrap/plugins/bootstrap-table.css">
-<script src="../../../../js/jquery.min.js"></script>
-<script src="../../../../js/popper.js"></script>
-<script src="../../../../js/bootstrap.min.js"></script>
-<script
-	src="../../../../js/bootstrap/plugins/bootstrap-datepicker.min.js"></script>
-<script
-	src="../../../../js/bootstrap/plugins/bootstrap-datepicker.zh-CN.min.js"
-	charset="UTF-8"></script>
-<script src="../../../../js/bootstrap/plugins/bootstrap-table.js"></script>
-<script src="../../../../js/fine-uploader.js"></script>
-<script src="../../../../js/vue/vue.js"></script>
-<script src="../../../../js/common.js"></script>
 <script type="text/javascript">
-	
+addLoadPageToClickEvent(".next");
 </script>
 <title>配置信息</title>
 </head>
@@ -40,13 +20,13 @@
 				<div class="row">
 					<div class="form-group col row">
 						<label class="col-3 col-form-label">设备编号:</label> <input
-							class="form-control col-8" type="text" value="待选"
-							disabled="disabled" />
+							class="form-control col-8" type="text"
+							value="fwq-sjk-dj-2006-001" disabled="disabled" />
 					</div>
 
 					<div class="form-group col row">
 						<label class="col-3 col-form-label">设备名称:</label> <input
-							class="form-control col-8" type="text" value="待选"
+							class="form-control col-8" type="text" value="数据库服务器"
 							disabled="disabled" />
 					</div>
 				</div>
@@ -85,20 +65,25 @@
 				</div>
 				<div class="row">
 					<div class="form-group col row">
-						<label class="col-2 col-form-label">服务端口:</label> <select
-							class="selectpicker">
-							<option>TCP</option>
-							<option>UDP</option>
-						</select> <input class="form-control col-1" type="number" min="0" max="255">
-						. <input class="form-control col-1" type="number" min="0"
-							max="255"> . <input class="form-control col-1"
-							type="number" min="0" max="255"> . <input
-							class="form-control col-1" type="number" min="0" max="255">
+						<label class="col-2 col-form-label">服务端口:</label> <input
+							class="form-control col-2 disable" id="dept" type="text" required>
+						<div class="dropdown">
+							<button type="button" id="dLabel"
+								class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"></button>
+							<div class="dropdown-menu dropdown-menu-right"
+								aria-labelledby="dLabel">
+								<button class="dropdown-item" type="button">TCP</button>
+								<button class="dropdown-item" type="button">UDP</button>
+							</div>
+						</div>
+						<input class="form-control col-5" type="text"
+							pattern="^(?:(?:1[0-9][0-9]\.)|(?:2[0-4][0-9]\.)|(?:25[0-5]\.)|(?:[1-9][0-9]\.)|(?:[0-9]\.)){3}(?:(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5])|(?:[1-9][0-9])|(?:[0-9]))$">
 					</div>
 				</div>
 			</form>
 			<div class="row justify-content-center" style="margin-top: 0.5em">
-				<button type="button" class="btn btn-primary">下一步</button>
+				<button type="button" class="btn btn-sm btn-primary next" id="add-server-net">下一步</button>
 			</div>
 		</div>
 	</div>

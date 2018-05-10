@@ -29,23 +29,28 @@
 	$(function() {
 		//加载首页菜单
 		loadPage("nav", "nav2")
+
 		//加载首页内容
 		loadPage("content", "index")
-		//
+		//设置当前活动菜单
+		activeMenu = "index";
+		//绑定左侧菜单点击事件
 		setTimeout(function() {
 			$(".nav-link").addEvent('click', function(e) {
 				e.preventDefault();
 				loadPage("content", e.target.id)
+				activeMenu = e.target.id;
 			})
-		}, 500)
-
+		}, 500);
 		setInterval(function() {
-			$(".btn-info").addEvent('click', function(e) {
-				e.preventDefault();
-				var id = e.target.id;
-				loadPage("content", id)
-			})
-		}, 1000);
+			addLoadPageToClickEvent(".btn-info")
+		}, 100);
+		setInterval(function() {
+			addLoadPageToClickEvent(".add")
+		}, 100);
+		setInterval(function() {
+			addLoadPageToClickEvent(".next")
+		}, 100);
 	})
 </script>
 <title>信息化固定资产</title>

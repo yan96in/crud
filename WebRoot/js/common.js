@@ -1,4 +1,7 @@
-//fixme 无效
+//定义一些每个页面都可能用到的全局变量
+var activeMenu = "index";// 当前活动菜单
+
+// fixme 无效
 $(function() {
 	// Some options to pass to the uploader are discussed on the next page
 	/*
@@ -35,14 +38,23 @@ var loadPage = function(containerId, pageId) {
 			$("#" + containerId).html(data)
 		}
 	})
+};
+//
+var addLoadPageToClickEvent = function(selector) {
+	$(selector).addEvent('click', function(e) {
+		e.preventDefault();
+		var id = e.target.id;
+		loadPage("content", id)
+	})
 }
+
 // initTable
 var initTable = function() {
 
 	$("#bootstrap-table")
 			.bootstrapTable(
 					{
-						classes:'table table-striped table-sm',
+						classes : 'table table-striped table-sm',
 						// url : '/Home/GetDepartment', //请求后台的URL（*）
 						method : 'get', // 请求方式（*）
 						toolbar : '#toolbar', // 工具按钮用哪个容器
@@ -115,23 +127,14 @@ var initTable = function() {
 									formatter : function(value, row, index) {
 										var html = [];
 										html
-												.push("<button type='button' id='detail' class='btn btn-sm btn-info'>查看</button>");
+												.push("<button type='button' class='btn btn-sm btn-info' id='");
+										html.push(activeMenu);
+										html.push("-info'>查看</button>");
 										html
 												.push("<button type='button' class='btn btn-sm btn-danger'>删除</button>")
 										return html.join("");
 										// return '好';
 									}
 								}, ],
-						responseHandler : function(res) {
-							$(".btn-info").addEvent('click', function(e) {
-								e.preventDefault();
-								var id = e.target.id;
-								loadPage("content", id)
-							})
-						}
 					})
-}
-// 打开新增窗口 not used
-var openAddPage = function(pageId) {
-	loadpage("content", pageId);
-}
+};

@@ -27,9 +27,29 @@
 		})
 
 		//
-		$(".next").addEvent('click', function(e) {
+		$("#next").addEvent('click', function(e) {
 			e.preventDefault();
-			var id = e.target.id;
+			var id;
+			switch (activeMenu) {
+			case "network":
+				id = "add-network-config";
+				break;
+			case "storage":
+				id = "add-storage-config";
+				break;
+			case "server":
+				id = "add-server-config";
+				break;
+			case "safe":
+				id = "add-safe-config";
+				break;
+			case "video":
+				id = "add-video-config";
+				break;
+			case "base"://XXX 基础设备只有各种数据表,这里需要特殊处理,方式待定
+				id = "add-video-config";
+				break;
+			}
 			loadPage("content", id)
 		})
 	});
@@ -45,7 +65,8 @@
 			<div class="row">
 				<div class="form-group col row justify-content-start">
 					<label class="col-4 col-form-label text-right" for="equipmentCode">设备编号</label>
-					<input class="col-2 form-control" id="equipmentCode" required>
+					<input class="col-2 form-control form-control-sm"
+						id="equipmentCode" required>
 					<div class="dropdown">
 						<button class="btn btn-secondary dropdown-toggle" type="button"
 							id="equipment-abbr" data-toggle="dropdown" aria-haspopup="true"
@@ -260,8 +281,7 @@
 		</form>
 	</div>
 	<div class="row justify-content-center" style="margin-top: 0.5em">
-		<button class="btn btn-primary next" id="add-network-config"
-			type="button">下一步</button>
+		<button class="btn btn-sm btn-primary" type="button" id="next">下一步</button>
 	</div>
 </body>
 </html>
