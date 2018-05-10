@@ -1,6 +1,9 @@
 .no-padding {
 	padding: 0
 }
+.padding-left{
+	padding-left:1rem;
+}
 .divider {
   width: 0;
   margin: 0 0.1rem;
