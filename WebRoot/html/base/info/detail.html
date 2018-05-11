@@ -13,7 +13,7 @@
 							classes:'table table-sm table-striped',
 							// url : '/Home/GetDepartment', //请求后台的URL（*）
 							method : 'get', // 请求方式（*）
-							toolbar : '#toolbar', // 工具按钮用哪个容器
+							//toolbar : '#toolbar', // 工具按钮用哪个容器
 							striped : true, // 是否显示行间隔色
 							cache : false, // 是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
 							pagination : true, // 是否显示分页（*）
@@ -82,7 +82,7 @@
 										formatter : function(value, row, index) {
 											var html = [];
 											html
-													.push("<button type='button' id='detail' class='btn btn-sm btn-info'>查看</button>");
+													.push("<button type='button' id='maintenance-detail' class='btn btn-sm btn-info'>查看</button>");
 
 											return html.join("");
 											// return '好';
@@ -103,7 +103,7 @@
 							// url : '/Home/GetDepartment', //请求后台的URL（*）
 							classes:'table table-sm table-striped',
 							method : 'get', // 请求方式（*）
-							toolbar : '#toolbar', // 工具按钮用哪个容器
+							//toolbar : '#toolbar', // 工具按钮用哪个容器
 							striped : true, // 是否显示行间隔色
 							cache : false, // 是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
 							pagination : true, // 是否显示分页（*）
@@ -172,7 +172,7 @@
 										formatter : function(value, row, index) {
 											var html = [];
 											html
-													.push("<button type='button' id='detail' class='btn btn-sm btn-info'>查看</button>");
+													.push("<button type='button' id='repair-detail' class='btn btn-sm btn-info'>查看</button>");
 
 											return html.join("");
 											// return '好';
@@ -240,8 +240,8 @@
 		</tbody>
 	</table>
 	<div class="accordion" id="accordion">
-		<div class="card h-75">
-			<div class="card-header" id="headingTwo">
+		<div class="card">
+			<div class="card-header no-padding" id="headingTwo">
 				<h5 class="mb-0">
 					<button class="btn btn-link collapsed" type="button"
 						data-toggle="collapse" data-target="#collapseTwo"
@@ -250,13 +250,13 @@
 			</div>
 			<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
 				data-parent="#accordion">
-				<div class="card-body">
+				<div class="card-body no-padding">
 					<table id="bootstrap-table-maintenance"></table>
 				</div>
 			</div>
 		</div>
 		<div class="card">
-			<div class="card-header" id="headingThree">
+			<div class="card-header no-padding" id="headingThree">
 				<h5 class="mb-0">
 					<button class="btn btn-link collapsed" type="button"
 						data-toggle="collapse" data-target="#collapseThree"
@@ -265,7 +265,7 @@
 			</div>
 			<div id="collapseThree" class="collapse"
 				aria-labelledby="headingThree" data-parent="#accordion">
-				<div class="card-body">
+				<div class="card-body no-padding">
 					<table id="bootstrap-table-repair"></table>
 				</div>
 			</div>

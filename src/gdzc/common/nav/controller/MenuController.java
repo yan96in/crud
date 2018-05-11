@@ -74,8 +74,14 @@ public class MenuController {
 			case "base-info":
 				return "/equipment/base/info";
 				
+			case "search":
+				return "/equipment/network/info";
 			case "baseinfo-tab":
 				return "/base/info/detail";
+			case "maintenance-detail":
+				return "/base/maintenance/detail";	
+			case "repair-detail":
+				return "/base/repair/detail";
 			case "network-config-tab":
 				return "/equipment/network/config/detail";
 			case "network-port-tab":
