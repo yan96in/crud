@@ -117,15 +117,19 @@ var initTable = function() {
 								},
 								{
 									field : 'Name',
-									title : '设备编号'
+									title : '设备编号',
+									width:'30%'
+										
 								},
 								{
 									field : 'ParentName',
-									title : '设备名称'
+									title : '设备名称',
+									width:'30%'
 								},
 								{
 									field : 'Level',
-									title : '固定资产负责人'
+									title : '固定资产负责人',
+									width:'20%'
 								},
 								{
 									field : 'Desc',
